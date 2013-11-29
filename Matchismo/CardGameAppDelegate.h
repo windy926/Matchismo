@@ -1,0 +1,15 @@
+//
+//  CardGameAppDelegate.h
+//  Matchismo
+//
+//  Created by qsu on 13-11-29.
+//  Copyright (c) 2013年 Qi Su. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface CardGameAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
+@end
