@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
+#import "CardMatchingGame.h"
+#import "CardView.h"
 
 @interface CardGameViewController : UIViewController
+
+@property (strong, nonatomic) Deck *deck;
+@property (strong, nonatomic) CardMatchingGame *cardMathingGame;
+
+- (CardView *)newCardViewForCard:(Card *)card; // abstract
 
 @end

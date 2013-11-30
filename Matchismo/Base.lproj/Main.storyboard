@@ -1,21 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sKy-Va-QoL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Playing Card Game View Controller - Playing Card-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="CardGameViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iqb-n0-Cey"/>
+                        <viewControllerLayoutGuide type="bottom" id="hf2-Xn-H3S"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdT-ca-XfV">
+                                <rect key="frame" x="20" y="540" width="62" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waV-hv-oKl">
+                                <rect key="frame" x="20" y="72" width="280" height="450"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M1-4a-0pv">
+                                <rect key="frame" x="246" y="530" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Re-deal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="redeal" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7wc-WB-KHI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="waV-hv-oKl" firstAttribute="top" secondItem="Iqb-n0-Cey" secondAttribute="bottom" constant="20" symbolic="YES" id="0tz-sJ-LJ3"/>
+                            <constraint firstItem="waV-hv-oKl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="7Gm-Ls-U9O"/>
+                            <constraint firstItem="hf2-Xn-H3S" firstAttribute="top" secondItem="GdT-ca-XfV" secondAttribute="bottom" constant="20" symbolic="YES" id="DEy-IR-C9U"/>
+                            <constraint firstAttribute="trailing" secondItem="1M1-4a-0pv" secondAttribute="trailing" constant="20" symbolic="YES" id="L4O-lQ-x83"/>
+                            <constraint firstItem="hf2-Xn-H3S" firstAttribute="top" secondItem="1M1-4a-0pv" secondAttribute="bottom" constant="20" symbolic="YES" id="Q4c-2Z-JTB"/>
+                            <constraint firstItem="1M1-4a-0pv" firstAttribute="top" secondItem="waV-hv-oKl" secondAttribute="bottom" constant="8" symbolic="YES" id="W9E-hU-Fey"/>
+                            <constraint firstItem="GdT-ca-XfV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="dnT-9f-3m8"/>
+                            <constraint firstAttribute="trailing" secondItem="waV-hv-oKl" secondAttribute="trailing" constant="20" symbolic="YES" id="ixY-am-blM"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Playing Card" id="bkF-KE-KT5"/>
+                    <connections>
+                        <outlet property="allCardsView" destination="waV-hv-oKl" id="JIO-m1-e4X"/>
+                        <outlet property="scoreLabel" destination="GdT-ca-XfV" id="uSj-X8-x07"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="803" y="57"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gal-Lw-8Sh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sKy-Va-QoL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wwS-WF-40R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="9Ks-0E-PoS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujX-my-HjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="57"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
