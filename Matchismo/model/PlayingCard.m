@@ -29,6 +29,11 @@
     return [[PlayingCard rankStrings] count] - 1;
 }
 
+- (NSString *)rankAsString
+{
+    return [PlayingCard rankStrings][self.rank];
+}
+
 - (NSString *)contents
 {
     NSString *contents = [NSString stringWithFormat:@"%@%@", [[PlayingCard rankStrings] objectAtIndex:self.rank], self.suit];

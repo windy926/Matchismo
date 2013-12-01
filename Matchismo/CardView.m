@@ -16,14 +16,6 @@
     [self setNeedsDisplay];
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 #define CORNER_FONT_STANDARD_HEIGHT 180.0
 #define CORNER_RADIUS 12.0
 
@@ -49,10 +41,27 @@
     [self drawCard];
 }
 
-- (void)drawCard
+- (void)drawCard {}
+
+#pragma mark - Initialization
+
+- (void)setup
 {
-    [self setBackgroundColor:[UIColor blackColor]];
+    self.backgroundColor = nil;
+    self.opaque = NO;
+    self.contentMode = UIViewContentModeRedraw;
 }
 
+- (void)awakeFromNib
+{
+    [self setup];
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    [self setup];
+    return self;
+}
 
 @end

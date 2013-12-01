@@ -8,6 +8,8 @@
 
 #import "PlayingCardGameViewController.h"
 #import "PlayingCardDeck.h"
+#import "PlayingCard.h"
+#import "PlayingCardView.h"
 
 @interface PlayingCardGameViewController ()
 
@@ -21,11 +23,16 @@
     return super.deck;
 }
 
-- (void)viewDidLoad
+- (void)initCardMathingGameAndCardViews
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    self.cardMathingGame.matchMode = 2;
+    [super initCardMathingGameAndCardViews];
+    self.cardMathingGame.matchMode = GAME_MODE_2_CARD;
+}
+
+- (CardView *)newCardView
+{
+    PlayingCardView *playingCardView = [[PlayingCardView alloc] init];
+    return playingCardView;
 }
 
 @end

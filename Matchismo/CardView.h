@@ -15,4 +15,7 @@
 
 - (void)drawCard; // abstract
 
+- (CGFloat)cornerScaleFactor;
+- (CGFloat)cornerOffset;
+
 @end

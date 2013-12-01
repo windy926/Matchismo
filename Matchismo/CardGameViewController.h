@@ -16,6 +16,11 @@
 @property (strong, nonatomic) Deck *deck;
 @property (strong, nonatomic) CardMatchingGame *cardMathingGame;
 
-- (CardView *)newCardViewForCard:(Card *)card; // abstract
+- (CardView *)newCardView; // abstract
+- (void)initCardMathingGameAndCardViews;
 
+- (void)updateCardViews;
+
+- (void)updateUI;
+- (void)reputCardViews;
 @end

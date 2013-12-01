@@ -17,7 +17,7 @@
     return @[[NSNumber numberWithInteger:1], [NSNumber numberWithInteger:2], [NSNumber numberWithInteger:3]];
 }
 
-+ (NSArray *)validSymbols { return @[@"▴", @"●", @"■"]; }
++ (NSArray *)validSymbols { return @[@"diamond", @"squiggle", @"oval"]; }
 
 + (NSArray *)validShadings
 {
